@@ -17,6 +17,29 @@
         ]
     ],
     "persist": "config.toml",
+    "pre_install": [
+        "$persistDir = \"$(Split-Path (Split-Path $dir))\\persist\\ir-comp-control\"",
+        "$persistFile = \"$persistDir\\config.toml\"",
+        "if (-not (Test-Path $persistFile)) {",
+        "    foreach ($v in (Get-ChildItem (Split-Path $dir) -Directory | Where-Object { $_.FullName -ne $dir } | Sort-Object Name -Descending)) {",
+        "        $c = Join-Path $v.FullName 'config.toml'",
+        "        if ((Test-Path $c -PathType Leaf) -and -not ((Get-Item $c -Force).Attributes -band [IO.FileAttributes]::ReparsePoint)) {",
+        "            New-Item -ItemType Directory -Path $persistDir -Force | Out-Null",
+        "            Copy-Item $c $persistFile -Force",
+        "            break",
+        "        }",
+        "    }",
+        "}"
+    ],
+    "post_install": [
+        "$cfg = \"$dir\\config.toml\"",
+        "if (Test-Path $cfg -PathType Container) {",
+        "    (Get-Item $cfg -Force).Attributes = 'Directory, ReparsePoint'",
+        "    cmd /c rmdir \"$cfg\"",
+        "    $pd = \"$(Split-Path (Split-Path $dir))\\persist\\ir-comp-control\"",
+        "    if (Test-Path $pd) { Remove-Item $pd -Recurse -Force -ErrorAction SilentlyContinue }",
+        "}"
+    ],
     "checkver": "github",
     "autoupdate": {
         "architecture": {
