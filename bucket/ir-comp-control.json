@@ -5,7 +5,7 @@
     "license": "0BSD",
     "notes": "Set your COM port in config.toml (created next to the exe on first launch). Close the Arduino IDE Serial Monitor before starting.",
     "architecture": {
-        "win64": {
+        "64bit": {
             "url": "https://github.com/Rocaccel/ir-comp-control/releases/download/v0.2.0/ir-comp-control_v0.2.0-win64.exe",
             "hash": "2b2f1fc6de9e8d9636387e3821a2671a3518742e8d54db258f687bffa80791ee"
         }
@@ -20,7 +20,7 @@
     "checkver": "github",
     "autoupdate": {
         "architecture": {
-            "win64": {
+            "64bit": {
                 "url": "https://github.com/Rocaccel/ir-comp-control/releases/download/v$version/ir-comp-control_v$version-win64.exe"
             }
         },
