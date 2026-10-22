@@ -1,18 +1,18 @@
 {
-    "version": "0.2.0",
+    "version": "0.2.1",
     "description": "Turns an IR remote into a Windows PC controller: keyboard emulation, smart mouse, safe shutdown, system tray app",
     "homepage": "https://github.com/Rocaccel/ir-comp-control",
     "license": "0BSD",
     "notes": "Set your COM port in config.toml (created next to the exe on first launch). Close the Arduino IDE Serial Monitor before starting.",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/Rocaccel/ir-comp-control/releases/download/v0.2.0/ir-comp-control_v0.2.0-win64.exe",
-            "hash": "2b2f1fc6de9e8d9636387e3821a2671a3518742e8d54db258f687bffa80791ee"
+            "url": "https://github.com/Rocaccel/ir-comp-control/releases/download/v0.2.1/ir-comp-control_v0.2.1-win64.exe",
+            "hash": "9738ffa2cceeda00b16447fb23b8aca5ee4651c0157a999a65923f0fc357ec09"
         }
     },
     "bin": [
         [
-            "ir-comp-control_v0.2.0-win64.exe",
+            "ir-comp-control_v0.2.1-win64.exe",
             "ir-comp-control"
         ]
     ],
