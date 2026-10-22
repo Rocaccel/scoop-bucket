@@ -14,5 +14,6 @@ scoop install <app>
 | App | Description |
 | :--- | :--- |
 | [ir-comp-control](bucket/ir-comp-control.json) | Turns an IR remote into a Windows PC controller: keyboard emulation, smart mouse, safe shutdown |
+| [osd-clock](bucket/osd-clock.json) | On-screen display clock for Windows written in Go |
 
 Manifests are kept up to date automatically by GitHub Actions when a new release appears.
